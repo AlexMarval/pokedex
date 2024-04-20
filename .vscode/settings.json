@@ -1,0 +1,17 @@
+{
+    "material-icon-theme.activeIconPack": "nest",
+    "workbench.colorCustomizations": {
+    },
+    "peacock.color": "#dd0531",
+    "rest-client.environmentVariables": {
+        "$shared": {},
+        "local": {
+            "hostname": "http://0.0.0.0:3000/api",
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTcxMzUyOTIzOSwiZXhwIjoxNzEzNTcyNDM5fQ._Ftt3jFkf8ajUsR_N72C97Gts6HnhEpAyOkOC3MGTPs",
+        },
+        "production": {
+            "hostname": "http://0.0.0.0:3000/api",
+            "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTcxMzUyOTIzOSwiZXhwIjoxNzEzNTcyNDM5fQ._Ftt3jFkf8ajUsR_N72C97Gts6HnhEpAyOkOC3MGTPs",
+        }
+    },
+}
