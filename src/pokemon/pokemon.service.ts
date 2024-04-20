@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
@@ -14,10 +14,18 @@ export class PokemonService {
   ) {}
 
   create(createPokemonDto: CreatePokemonDto) {
-    createPokemonDto.name = createPokemonDto.name.toLocaleLowerCase();
+    try {
+      createPokemonDto.name = createPokemonDto.name.toLocaleLowerCase();
 
-    const pokemon = this.pokemonModel.create(createPokemonDto);
-    return pokemon;
+      const pokemon = this.pokemonModel.create(createPokemonDto);
+      return pokemon;
+    } catch (error) {
+      if (error) {
+        throw new BadRequestException(
+          `Pokemon is not exits in db ${JSON.stringify(error.keyValue)}`,
+        );
+      }
+    }
   }
 
   findAll() {
